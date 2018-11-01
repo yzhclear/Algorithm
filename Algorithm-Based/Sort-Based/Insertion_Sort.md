@@ -25,6 +25,7 @@ void insertSort(int arr[], int n) {
     for( int i = 1 ; i < n; i ++ ) {
         //寻找元素arr[i]合适插入的位置
         int e = arr[i];
+        int j;
         for( j = i ; j > 0 && arr[j-1] > e ; j -- ) {
             arr[j] = arr[j-1];
         }
@@ -32,3 +33,6 @@ void insertSort(int arr[], int n) {
     }
 }
 ```
+因为插入排序第二层循环可以提前结束，而选择排序第一层第二层循环需要扫描数组中每一个元素，所以插入排序理论上要比选择排序快。    
+当一个数组近乎有序时，插入排序的效率会非常高。    
+插入排序是稳定的排序算法。
