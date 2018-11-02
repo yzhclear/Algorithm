@@ -30,7 +30,7 @@ void __merge(int arr[], int l, int mid, int r) {
 }
 
 // 递归使用归并排序，对arr[l..r]范围元素进行排序
-void mergeSort(int arr[], int l, int r) {
+void __mergeSort(int arr[], int l, int r) {
     // if( l >= r )
     //    return;
 
