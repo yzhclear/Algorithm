@@ -1,3 +1,4 @@
+![](https://github.com/yzhclear/Algorithms/blob/master/img/quickSort_1.png)
 ```
 // 对arr[l...r]部分进行partition操作
 // 返回p，使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
