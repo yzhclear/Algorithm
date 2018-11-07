@@ -42,7 +42,7 @@ void quickSort( int arr[], int n) {
 
 // 对arr[l...r]部分进行partition操作
 // 返回p，使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
-int partition(int arrp=[], int l, int r) {
+int partition(int arr[], int l, int r) {
 
     swap(arr[l], arr[rand()%(r-l+1)+l]);
     int v = arr[l];
