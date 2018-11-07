@@ -1,7 +1,7 @@
 插入排序的思想是:   
 从数组的第二个元素开始(因为第一个元素只有一个元素，默认是有序的)，不停地与前面的元素进行比较，如果小于的话，就交换位置。直至数组的最后一个元素。
 ```
-void insertSort(int arr[], int n) {
+void insertionSort(int arr[], int n) {
 
     for( int i = 1 ; i < n ; i ++ ) {
 
@@ -20,7 +20,7 @@ void insertSort(int arr[], int n) {
 则将元素`i-1`的值赋值给元素`i`,如果大于的话，就将当前元素的值赋值为`i'`。即将原来比较之后的交换操作变成赋值操作，性能更优。
 
 ```
-void insertSort(int arr[], int n) {
+void insertionSort(int arr[], int n) {
 
     for( int i = 1 ; i < n; i ++ ) {
         //寻找元素arr[i]合适插入的位置

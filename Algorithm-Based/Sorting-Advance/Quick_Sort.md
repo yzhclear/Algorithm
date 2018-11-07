@@ -118,7 +118,7 @@ void __quickSort(int arr[], int l, int r) {
         return;
     }
 
-    int p = __partition(arr, l, r);
+    int p = __partition2(arr, l, r);
     __quickSort(arr, l, p-1);
     __quickSort(arr, p+1, r);
 }
@@ -129,3 +129,48 @@ void quickSort( int arr[], int n) {
     __quickSort(arr, 0, n-1);
 }
 ```   
+最后来看一下三路快排是如何实现的     
+![](https://github.com/yzhclear/Algorithms/blob/master/img/quickSort_3.png)     
+```
+void __quickSort3Ways(int arr[], int l, int r) {
+
+    if ( r - l <= 15 ) {
+        insertionSort(arr, l, r);
+        return;
+    }
+
+    // partition
+    swap(arr[l], arr[rand()%(r-l+1)+l]);
+    int v = arr[l];
+
+    int lt = l;     // arr[l+1...lt] < v
+    int gt = r + 1;  // arr[gt...r] > v
+    int i = l + 1;   // arr[lt+1...i) == v
+
+    while( i < gt ) {
+        if ( arr[i] < v ) {
+            swap( arr[i], arr[lt+1] );
+            lt ++;
+            i ++;
+        }
+        else if ( arr[i] > v ) {
+            swap( arr[i], arr[gt-1] );
+            gt --;
+        }
+        else { // arr[i] == v
+            i ++;
+        }
+    }
+
+    swap( arr[l], arr[lt] );
+
+    __quickSort3Ways(arr, l, lt-1);
+    __quickSort3Ways(arr, gt, r);
+
+}
+
+void quickSort3Ways(int arr[], int n) {
+    scrand(time(NULL));
+    __quickSort3Ways( arr, 0, n-1 );
+}
+```
