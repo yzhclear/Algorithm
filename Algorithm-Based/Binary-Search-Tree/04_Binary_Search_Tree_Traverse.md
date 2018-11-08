@@ -185,17 +185,17 @@ void depthFirstSearch(Node* root){
     stack<Node*> s;  
     s.push(root);
 
-    while(!s.empty()){
+    while( !s.empty() ){
 	    Node* node = s.top();
-        nodeStack.pop();
+        s.pop();
 
         cout<<node->key<<endl;
 
         if(node->right){
-            nodeStack.push(node->right);  //先将右子树压栈
+            s.push(node->right);  //先将右子树压栈
         }
         if(node->left){
-            nodeStack.push(node->left);  //再将左子树压栈
+            s.push(node->left);  //再将左子树压栈
         }
     }
 }
