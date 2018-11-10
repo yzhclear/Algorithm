@@ -5,6 +5,8 @@
 删除既有左子树又有右子树的节点 d
 找到 s = min(d->right)
 
+s是d的后继
+
 s->right = delMin(d->right)
 s->left = d->left
 
